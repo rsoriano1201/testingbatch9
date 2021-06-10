@@ -1,0 +1,129 @@
+Recap - Class 1
+Cucumber is a tool that supports BDD(Behavioral Driven Development)
+
+
+BDD is an agile software developement process which encourages collaboration among developers, testers(QA),
+and non-technical or business people/participants in software project development.
+
+BDD uses Gherkin language which is plain meaningful English text using a simple grammar.
+It allows automation of functional validation in an easily readable and understandable format like plain English.
+
+Given - pre condition
+when - action we perform
+then - expected output/result
+and - continue of step(given, when, then)
+but - to exclude something
+
+Features - to write scenarios
+Steps - to link feature file scenarios
+Pages - to define locators and other functions
+
+definition of done - when it is ready to deploy on production after testing
+definition of ready - when user story is clear, testable, defined, and sized
+
+US 98903 - Login -
+Valid admin credentials
+valid ess employee credentials
+valid username and invalid password for error check
+
+Should have one scenario for each step
+
+Feature: Login
+  Scenario: valid admin login
+    Given user navigates to hrms
+    When user enters valid admin username and password
+    And user clicks on login button
+    Then admin user is successfully logged in
+
+  Scenario: valid ess employee login
+    Given user navigates to hrms
+    When user enters valid ess username and password
+    And user clicks on login button
+    Then ess user is successfully logged in
+
+  Scenario: login with valid username and invalid password
+    Given user navigates to hrms
+    When user enters valid username and invalid password
+    And user clicks on login button
+    Then user see invalid credentials text on login page
+
+    Recap - Class 2
+    Runner class - we import Runner class from the JUnit and we also have to provide where
+    the feature files are present.
+
+    We pass feature file location and the steps related to the Feature file with
+    CucumberOptions annotation
+
+        @RunWIth(Cucumber.class)
+        @CucumberOptions(
+                        feature = "src/test/resources/features/Login.feature",
+                        glue = "steps"
+
+        public class TestRunner{
+        }
+
+        *Glue is the path to step definition*
+
+        Feature - to write scenarios
+        steps - to link feature file scenarios
+        pages - to define locators and other functions
+
+Definition of done - when it is ready to deploy on production after testing
+Definition of ready - when user story is clear, testable, defined and sized.
+
+Recap - class 3
+Hooks - we define our pre-condition and post condition here with the tags @Before & @After
+glue - checks all the step definition implementation of gherkin steps
+dry run - if it is set to true, no actual execution happens, quickly scans all the file to
+check if steps are there
+monochrome - makes console log more readable
+tags - we control the flow of execution of our scenarios with the help of tags
+background - we define repeated steps inside it for respective feature file
+pass data from feature file scenario
+
+scenario-outline
+"<firstname>"
+Examples:
+|firstname|lastname|
+
+Recap -
+via parameters -
+via data table -
+via excel file -
+
+tags -
+
+maven cucumber report
+add plugin to runner class
+it will generate .json file
+
+2 add - maven cucumber plugin to pom xml file
+specify some configurations in pom file
+
+to attach screenshot to my cucumber report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

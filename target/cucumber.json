@@ -1,0 +1,87 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-06-09T14:05:52.581Z",
+        "before": [
+          {
+            "result": {
+              "duration": 6244000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.start()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "valid admin login",
+        "description": "",
+        "id": "login;valid-admin-login",
+        "after": [
+          {
+            "result": {
+              "duration": 635000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.Hooks.end()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 296000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user enters valid admin username and password",
+            "match": {
+              "location": "steps.LoginSteps.user_enters_valid_admin_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1610000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user clicks on login button",
+            "match": {
+              "location": "steps.LoginSteps.user_clicks_on_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "admin user is successfully logged in",
+            "match": {
+              "location": "steps.LoginSteps.admin_user_is_successfully_logged_in()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@simpletag"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Login.feature",
+    "tags": []
+  }
+]
